@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PNART Spaceman Edition</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0a0f1c;
+color:white;
+text-align:center;
+}
+
+/* HERO SECTION */
+
+.hero{
+background-image:url("pnartshirt.jpg");
+background-size:cover;
+background-position:center;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+padding:20px;
+}
+
+/* TITLE */
+
+h1{
+font-size:48px;
+letter-spacing:4px;
+}
+
+.subtitle{
+font-size:20px;
+margin-bottom:30px;
+}
+
+/* COUNTDOWN */
+
+#countdown{
+font-size:50px;
+font-weight:bold;
+background:rgba(255,255,255,0.1);
+padding:20px 40px;
+border-radius:10px;
+margin-bottom:40px;
+}
+
+/* PROMO TEXT */
+
+.promo{
+max-width:700px;
+font-size:18px;
+line-height:1.6;
+}
+
+/* PRICE */
+
+.oldprice{
+text-decoration:line-through;
+color:#bbb;
+}
+
+.newprice{
+color:#00ffcc;
+font-size:28px;
+font-weight:bold;
+}
+
+/* WHATSAPP BUTTON */
+
+.order{
+margin-top:30px;
+padding:15px 35px;
+background:#25D366;
+color:white;
+text-decoration:none;
+font-size:20px;
+border-radius:8px;
+display:inline-block;
+}
+
+/* PRODUCT IMAGE */
+
+.product img{
+width:350px;
+margin-top:40px;
+border-radius:10px;
+}
+
+/* SOCIALS */
+
+.socials{
+margin-top:40px;
+font-size:18px;
+}
+
+footer{
+margin-top:60px;
+padding:20px;
+font-size:14px;
+color:#aaa;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="hero">
+
+<h1>PNART SPACEMAN EDITION</h1>
+<p class="subtitle">Tshirt Release – May 2026</p>
+
+<div id="countdown"></div>
+
+<p class="promo">
+
+First 10 customers get the Tshirt for  
+<span class="oldprice">R650</span>  
+<span class="newprice">R500</span>
+
+<br><br>
+
+Place your order on WhatsApp.
+
+<br><br>
+
+Free delivery to your nearest PEP Store nationwide or Bolt delivery near Johannesburg Braamfontein.
+
+</p>
+
+<a class="order" href="https://wa.me/27823031441">
+Order on WhatsApp
+</a>
+
+</div>
+
+<div class="product">
+<img src="pnartshirt.jpg" alt="PNART Tshirt">
+</div>
+
+<div class="socials">
+
+<p>Follow for more releases</p>
+
+Instagram: PNART_clothing  
+<br>
+
+Instagram: Pule_Ndaba_Art  
+<br>
+
+Facebook: Pule Timothy Ndaba  
+<br>
+
+TikTok: Puletheartist
+
+</div>
+
+<footer>
+PNART Clothing © 2026
+</footer>
+
+<script>
+
+/* COUNTDOWN TIMER */
+
+var releaseDate = new Date("May 1, 2026 00:00:00").getTime();
+
+var timer = setInterval(function(){
+
+var now = new Date().getTime();
+
+var distance = releaseDate - now;
+
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+if (distance < 0) {
+
+clearInterval(timer);
+
+document.getElementById("countdown").innerHTML = "NOW AVAILABLE";
+
+}
+
+}, 1000);
+
+</script>
+
+</body>
+</html>
